@@ -23,6 +23,8 @@ public class LongPress extends BaseTest{
         WebElement ele = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"People Names\")"));
         ((JavascriptExecutor)driver).executeScript("mobile: longClickGesture", ImmutableMap.of("elementId", ((RemoteWebElement)ele).getId(),
                 "duration", 2000));
+        String menuText = driver.findElement(By.id("new UiSelector().text(\"Sample menu\")")).getText();
+        Assert.assertEquals(menuText, "Sample menu");
     }
 }
 
