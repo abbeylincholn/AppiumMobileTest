@@ -33,7 +33,8 @@ public class BaseTest {
 
         UiAutomator2Options options = new UiAutomator2Options();  // create an instance of UiAutomator2Options to set capabilities for the Android driver
         options.setDeviceName("Abbeyemulator");
-        options.setApp("C:\\Users\\abbey\\OneDrive\\Desktop\\BACKUP\\Software\\AppiumMobileTest\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+        //options.setApp("C:\\Users\\abbey\\OneDrive\\Desktop\\BACKUP\\Software\\AppiumMobileTest\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+        options.setApp("C:\\Users\\abbey\\OneDrive\\Desktop\\BACKUP\\Software\\AppiumMobileTest\\Appium\\src\\test\\java\\resources\\General-Store.apk");
 
        driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);  // create an instance of AndroidDriver with the Appium server URL and options
        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  // set implicit wait timeout for the driver
