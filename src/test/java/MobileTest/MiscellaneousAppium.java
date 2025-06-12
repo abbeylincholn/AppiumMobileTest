@@ -25,7 +25,10 @@ public class MiscellaneousAppium extends BaseTest{
         driver.findElement(By.xpath("(//android.widget.RelativeLayout)[2]")).click();
         String alertTitle = driver.findElement(By.id("android:id/alertTitle")).getText();
         Assert.assertEquals(alertTitle, "WiFi settings");
-        driver.findElement(AppiumBy.id("android:id/edit")).sendKeys("Abbey Wifi");
+
+        //copy to clipboard - paste it clipboard
+        driver.setClipboardText("Abbey Wifi");
+        driver.findElement(AppiumBy.id("android:id/edit")).sendKeys(driver.getClipboardText());
         driver.findElement(AppiumBy.id("android:id/button1")).click();
     }
 }
