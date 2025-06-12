@@ -1,6 +1,8 @@
 package MobileTest;
 
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.DeviceRotation;
 import org.testng.Assert;
@@ -29,7 +31,12 @@ public class MiscellaneousAppium extends BaseTest{
         //copy to clipboard - paste it clipboard
         driver.setClipboardText("Abbey Wifi");
         driver.findElement(AppiumBy.id("android:id/edit")).sendKeys(driver.getClipboardText());
+        driver.pressKey(new KeyEvent(AndroidKey.ENTER));
         driver.findElement(AppiumBy.id("android:id/button1")).click();
+        driver.pressKey(new KeyEvent(AndroidKey.BACK));
+        driver.pressKey(new KeyEvent(AndroidKey.HOME));
+
+
     }
 }
 
