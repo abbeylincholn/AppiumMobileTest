@@ -40,6 +40,12 @@ public class eCommance_tc3 extends BaseTest {
         Double displayFormattedSum = getFormattedAmount(displaySum);
         Assert.assertEquals(displayFormattedSum, totalSum);
 
+        WebElement ele = driver.findElement(By.id("com.androidsample.generalstore:id/termsButton"));
+        longPressAction(ele);
+        driver.findElement(By.id("android:id/button1")).click();
+        driver.findElement(AppiumBy.className("android.widget.CheckBox")).click();
+        driver.findElement(By.id("com.androidsample.generalstore:id/btnProceed")).click();
+        //Thread.sleep(2000);
 
     }
 }
