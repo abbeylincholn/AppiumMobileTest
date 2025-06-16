@@ -41,7 +41,5 @@ public class eCommance_tc2 extends BaseTest {
         String lastProductName = driver.findElement(By.id("com.androidsample.generalstore:id/productName")).getText();
         Assert.assertEquals(lastProductName, "Jordan 6 Rings");
 
-
-
     }
 }

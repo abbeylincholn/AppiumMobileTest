@@ -2,8 +2,11 @@ package ECommance;
 
 import MobileTest.BaseTest;
 import io.appium.java_client.AppiumBy;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
+import io.appium.java_client.touch.offset.PointOption;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -11,8 +14,9 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Set;
 
-public class eCommance_tc3 extends BaseTest {
+public class eCommance_tc4_Hybrid extends BaseTest {
 
     @Test
     public void fillForm() throws InterruptedException {
@@ -45,9 +49,22 @@ public class eCommance_tc3 extends BaseTest {
         driver.findElement(By.id("android:id/button1")).click();
         driver.findElement(AppiumBy.className("android.widget.CheckBox")).click();
         driver.findElement(By.id("com.androidsample.generalstore:id/btnProceed")).click();
-        //Thread.sleep(2000);
+        Thread.sleep(6000);
 
-        //Hybrid App - Google page->
+        //Hybrid App - Google page-> to enable context switching
+        Set<String> contexts = driver.getContextHandles();
+        for (String context : contexts) {
+            System.out.println(context);
+        }
+
+        driver.context("WEBVIEW_com.androidsample.generalstore");
+        WebElement acceptButton = driver.findElement(By.xpath("//*[text()='Accept all']"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'end' });", acceptButton);
+        acceptButton.click();
+        driver.findElement(By.name("q")).sendKeys("bet9ja.com");
+        driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
+        driver.pressKey(new KeyEvent(AndroidKey.BACK));
+        driver.context("NATIVE_APP");
 
     }
 }

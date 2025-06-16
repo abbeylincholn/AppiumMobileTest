@@ -16,6 +16,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.time.Duration;
+import java.util.Arrays;
 
 public class BaseTest {
 
@@ -34,9 +35,10 @@ public class BaseTest {
         options.setDeviceName("Abbeyemulator");
         //options.setApp("C:\\Users\\abbey\\OneDrive\\Desktop\\BACKUP\\Software\\AppiumMobileTest\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
         options.setApp("C:\\Users\\abbey\\OneDrive\\Desktop\\BACKUP\\Software\\AppiumMobileTest\\Appium\\src\\test\\java\\resources\\General-Store.apk");
+        options.setChromedriverExecutable("C:\\Users\\abbey\\browserDrivers\\chromedriver.exe");
 
-       driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);  // create an instance of AndroidDriver with the Appium server URL and options
-       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  // set implicit wait timeout for the driver
+        driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);  // create an instance of AndroidDriver with the Appium server URL and options
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  // set implicit wait timeout for the driver
     }
 
     public void longPressAction(WebElement ele) {
@@ -54,6 +56,7 @@ public class BaseTest {
             ));
         } while (canScrollMore);
     }
+
     public void swipeAction(WebElement ele, String direction) {
         ((JavascriptExecutor)driver).executeScript("mobile: swipeGesture", ImmutableMap.of("elementId", ((RemoteWebElement)ele).getId(),
                 "direction", direction, "percent", 0.75));
