@@ -1,4 +1,4 @@
-package ECommance;
+package App_MobileBrowserTest;
 
 import MobileTest.BaseTest;
 import io.appium.java_client.AppiumBy;
