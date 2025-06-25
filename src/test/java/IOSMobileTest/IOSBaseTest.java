@@ -34,7 +34,8 @@ public class IOSBaseTest {
 
         XCUITestOptions  options = new XCUITestOptions();
         options.setDeviceName("iPhone 16 Pro");
-        options.setApp("/Users/alhamdulilahi/Library/Developer/Xcode/DerivedData/UIKitCatalog-hgyzzrgpiopflxejbyvtthdabnmi/Build/Products/Debug-iphonesimulator/UIKitCatalog.app");
+        //options.setApp("/Users/alhamdulilahi/Library/Developer/Xcode/DerivedData/UIKitCatalog-hgyzzrgpiopflxejbyvtthdabnmi/Build/Products/Debug-iphonesimulator/UIKitCatalog.app");
+        options.setApp("/Users/alhamdulilahi/IdeaProjects/AppiumMobileTest/src/test/java/resources/TestApp 3.app");
         options.setPlatformVersion("18.5");
         options.setPlatformName("IOS");
         //Appium-Webdriver Agent -> IOS Apps
