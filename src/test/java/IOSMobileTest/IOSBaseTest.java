@@ -36,6 +36,7 @@ public class IOSBaseTest {
         options.setDeviceName("iPhone 16 Pro");
         options.setApp("/Users/alhamdulilahi/Library/Developer/Xcode/DerivedData/UIKitCatalog-hgyzzrgpiopflxejbyvtthdabnmi/Build/Products/Debug-iphonesimulator/UIKitCatalog.app");
         options.setPlatformVersion("18.5");
+        options.setPlatformName("IOS");
         //Appium-Webdriver Agent -> IOS Apps
         options.setWdaLaunchTimeout(Duration.ofSeconds(20));
 
