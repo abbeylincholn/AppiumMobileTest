@@ -1,4 +1,4 @@
-package MobileTest;
+package AndroidMobileTest;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.android.AndroidDriver;
@@ -16,7 +16,6 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.time.Duration;
-import java.util.Arrays;
 
 public class BaseTest {
 

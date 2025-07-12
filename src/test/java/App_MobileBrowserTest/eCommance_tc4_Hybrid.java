@@ -1,6 +1,6 @@
 package App_MobileBrowserTest;
 
-import MobileTest.BaseTest;
+import AndroidMobileTest.BaseTest;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
