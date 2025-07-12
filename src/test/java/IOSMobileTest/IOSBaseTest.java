@@ -39,7 +39,7 @@ public class IOSBaseTest {
         options.setPlatformVersion("18.5");
         options.setPlatformName("IOS");
         //Appium-Webdriver Agent -> IOS Apps
-        options.setWdaLaunchTimeout(Duration.ofSeconds(20));
+        options.setWdaLaunchTimeout(Duration.ofSeconds(10));
 
         driver = new IOSDriver(new URI("http://127.0.0.1:4723").toURL(), options);  // create an instance of AndroidDriver with the Appium server URL and options
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  // set implicit wait timeout for the driver
